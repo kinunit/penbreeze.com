@@ -1,0 +1,35 @@
+<script setup lang="ts">
+import { services } from './constants';
+import ServiceCard from './ServiceCard.vue';
+
+</script>
+<script lang="ts">
+    export default {
+        name:"ServicesList"
+    }
+</script>
+<template>
+    <div class="services-list">
+        <ServiceCard
+            v-for="(service, index) in services"
+            :index="index + 1"
+            :title="service.title"
+            :description="service.description"
+        >
+            <template v-slot="service_ill">
+                <div class="service-ill"></div>
+            </template>
+        </ServiceCard>
+    </div>
+</template>
+<style lang="css" scoped>
+    .services-list {
+        display: flex;
+        flex-direction: column;
+        gap: 56px;
+    }
+    .service-ill {
+        height: 230px;
+        width: 100%;
+    }
+</style>
