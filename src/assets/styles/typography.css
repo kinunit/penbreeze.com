@@ -95,7 +95,7 @@
     --font-size: var(--font-size-30); 
 }
 .medium-body-text {
-    --font-size: var(--font-size-20); 
+    --font-size: var(--font-size-20);
 }
 .normal-body-text {
     --font-size: var(--font-size-18); 
