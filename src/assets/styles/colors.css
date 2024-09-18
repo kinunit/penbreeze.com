@@ -37,4 +37,20 @@
     --black-accent-100: #444444;
 
     --white-accent-900: #FFFFFF;
+
+    --yellow-accent-900: #FFD700;
+
+    --pink-accent-900: #FACBDF;
+
+    --red-accent-900: #FF5400;
+}
+
+.yellow {
+    color: var(--yellow-accent-900)
+}
+.pink {
+    color: var(--pink-accent-900);
+}
+.red {
+    color: var(--red-accent-900);
 }

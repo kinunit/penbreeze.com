@@ -25,7 +25,7 @@
 <style scoped>
     .footer {
         padding: 100px 40px;
-        background-color: var(--primary-white-color);
+        background-color: var(--orange-accent-100);
     }
     .company-details {
         width: 70%;

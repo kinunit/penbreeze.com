@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import { services } from './constants';
+import { allServices, minServices } from './constants';
 import ServiceCard from './ServiceCard.vue';
+
+interface IServicesListProps {
+    showAll?:boolean;
+}
+
+const props = defineProps<IServicesListProps>()
+const servicesList = props.showAll ?allServices : minServices
 
 </script>
 <script lang="ts">
@@ -11,7 +18,7 @@ import ServiceCard from './ServiceCard.vue';
 <template>
     <div class="services-list">
         <ServiceCard
-            v-for="(service, index) in services"
+            v-for="(service, index) in servicesList"
             :index="index + 1"
             :title="service.title"
             :description="service.description"

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import CircleIconButton from 'src/presentation/components/Buttons/IconButtons/CircleIconButton.vue';
-import Services from './components/Services';
 import ContactForm from './components/ContactForm/ContactForm.vue';
 import Footer from 'src/presentation/components/Footer/Footer.vue';
+import ServicesSection from './components/Services/ServicesSection.vue';
 
 </script>
 <template>
@@ -21,7 +21,7 @@ import Footer from 'src/presentation/components/Footer/Footer.vue';
         <CircleIconButton label="meet the team" class="meet-the-team-button" />
     </section>
 
-    <Services />
+    <ServicesSection />
 
     <section class="discover section-frame">
         <div class="discover-heading heading4">

@@ -2,18 +2,23 @@
 import FlatIconButton from 'src/presentation/components/Buttons/IconButtons/FlatIconButton.vue';
 import ServicesList from './ServicesList.vue';
 
+interface IServicesSectionProps {
+    showAll?:boolean;
+}
+
+const props = defineProps<IServicesSectionProps>()
 </script>
 <script lang="ts">
     export default {
-        name:"Services"
+        name:"ServicesSection"
     }
 </script>
 <template>
     <section class="section">
         <div class="services-heading heading5">We are experts at Building Brands</div>
-        <FlatIconButton label="see all services" class="see-all-services-button" />
+        <FlatIconButton label="see all services" class="see-all-services-button" v-show="!props.showAll" />
         
-        <ServicesList class="services-list" />
+        <ServicesList class="services-list" showAll />
     </section>
 </template>
 <style scoped>
