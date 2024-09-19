@@ -4,29 +4,10 @@ import ContactForm from './components/ContactForm/ContactForm.vue';
 import Footer from 'src/presentation/components/Footer/Footer.vue';
 import ServicesSection from './components/Services/ServicesSection.vue';
 import Testimony from '../About/components/Testimony/Testimony.vue';
-import ProcessCard, { type IIProcessCard } from '../Services/components/ProcessCard.vue';
-import IconBlob from "src/presentation/components/assets/blob.vue";
-import IconFlower from "src/presentation/components/assets/flower.vue";
-import IconSharpFlower from "src/presentation/components/assets/sharp-flower.vue";
+import ProcessCard from '../Services/components/ProcessCard.vue';
 import illIslandWithFlag from "src/assets/illustrations/island-with-flag.svg";
+import { processes, sectionPageProcessList } from '../Services/services';
 
-const processList:IIProcessCard[] = [
-    {
-        asset: IconBlob,
-        title:"Get in touch",
-        desc: "Reach out to us via email, social media, text, or our contact form."
-    },
-    {
-        asset: IconFlower,
-        title:"Book a discovery call",
-        desc: "We will talk about your goals and get an idea of what your business needs."
-    },
-    {
-        asset: IconSharpFlower,
-        title:"Get started",
-        desc:"Go over project agreement details and get started."
-    }
-]
 </script>
 <template>
     <section class="hero section-frame">
@@ -58,7 +39,7 @@ const processList:IIProcessCard[] = [
 
         <div class="process-list">
             <ProcessCard 
-                v-for="(process, index) in processList" 
+                v-for="(process, index) in sectionPageProcessList" 
                 :key="index"
                 :title="process.title"
                 :desc="process.desc"

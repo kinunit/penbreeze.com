@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import type { Component } from 'vue';
-
-    export interface IIProcessCard {
-        title:string;
-        desc:string;
-        asset:Component;
-    }
+    import type { IIProcessCard } from '../services';
     const props = defineProps<IIProcessCard>()
 </script>
 <template>
@@ -33,6 +27,8 @@ import type { Component } from 'vue';
         >.icon {
             height: 84px;
             width: 84px;
+            min-height: 84px;
+            min-width: 84px;
         }
         >.dets {
             margin-top: 50px;
