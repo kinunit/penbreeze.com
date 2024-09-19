@@ -6,8 +6,8 @@ interface IServicesListProps {
     showAll?:boolean;
 }
 
-const props = defineProps<IServicesListProps>()
-const servicesList = props.showAll ?allServices : minServices
+const props = defineProps<IServicesListProps>();
+const servicesList = props.showAll ?allServices :minServices;
 
 </script>
 <script lang="ts">
@@ -22,11 +22,8 @@ const servicesList = props.showAll ?allServices : minServices
             :index="index + 1"
             :title="service.title"
             :description="service.description"
-        >
-            <template v-slot="service_ill">
-                <div class="service-ill"></div>
-            </template>
-        </ServiceCard>
+            :asset="service.asset"
+        />
     </div>
 </template>
 <style lang="css" scoped>
@@ -38,5 +35,12 @@ const servicesList = props.showAll ?allServices : minServices
     .service-ill {
         height: 230px;
         width: 100%;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 </style>

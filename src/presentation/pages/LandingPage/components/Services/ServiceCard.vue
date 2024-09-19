@@ -1,13 +1,17 @@
 <script setup lang="ts">
+import type { Component } from 'vue';
+
     interface IServiceCardProps {
         index:number;
         title:string;
         description:string;
+        asset:Component;
     }
     const props = defineProps<IServiceCardProps>()
 </script>
 <script lang="ts">
     export interface IService {
+        asset:Component;
         title:string;
         description:string;
     }
@@ -22,9 +26,7 @@
             <div class="service-index">{{ props.index }}</div>
             <div class="service-title">{{ props.title }}</div>
         </div>
-        <div class="ill">
-            <slot name="service_ill"></slot>
-        </div>
+        <props.asset class="ill" />
         <div class="desc normal-body-text">{{ props.description }}</div>
     </div>
 </template>
@@ -64,8 +66,8 @@
     }
 
     .ill {
+        width: 100%;
         height: 230px;
-        background: lightgrey;
     }
 
     .desc {
@@ -73,5 +75,12 @@
         height: 125px;
         font-weight: var(--font-weight-normal);
         line-height: 140%;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 </style>

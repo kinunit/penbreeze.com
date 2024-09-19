@@ -4,6 +4,7 @@ import TextButton from './TextButton.vue';
 interface IPrimaryTextButtonProps {
     label:string;
     transparent?:boolean;
+    width:string;
 }
 const props = defineProps<IPrimaryTextButtonProps>()
 </script>
@@ -12,7 +13,7 @@ const props = defineProps<IPrimaryTextButtonProps>()
         :color="props.transparent ?'transparent' :'initial'"
         :label="props.label"
         height="60px"
-        width="100%"
+        :width="props.width"
         class="primary-text-color"
     />
 </template>

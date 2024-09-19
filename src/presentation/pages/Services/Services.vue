@@ -19,18 +19,19 @@ import FAQ from 'src/presentation/components/FAQ/FAQ.vue';
             <div class="heading4 process-heading">Did you know having a strong online presence is important for your business?</div>
             <div class="body medium-body-text">We're a team of passionate and creative digital marketing professionals dedicated to helping businesses like yours grow and succeed in the digital world - We help you WIN!</div>
 
-            <div class="process-list">
-                <ProcessCard 
+            <!-- <div class="process-list">
+                <ProcessCard
                     v-for="(process, index) in processes" 
                     :key="index"
                     :title="process.title"
                     :desc="process.desc"
+                    :asset=""
                 >
                     <template v-slot:process-asset>
                         <div class="process-asset-image"></div>
                     </template>
                 </ProcessCard>
-            </div>
+            </div> -->
         </div>
         
         <ServicesSection showAll  />

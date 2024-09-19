@@ -7,6 +7,7 @@ interface IServicesSectionProps {
 }
 
 const props = defineProps<IServicesSectionProps>()
+
 </script>
 <script lang="ts">
     export default {
@@ -15,10 +16,12 @@ const props = defineProps<IServicesSectionProps>()
 </script>
 <template>
     <section class="section">
-        <div class="services-heading heading5">We are experts at Building Brands</div>
-        <FlatIconButton label="see all services" class="see-all-services-button" v-show="!props.showAll" />
+        <div class="heading-top">
+            <div class="services-heading heading5">We are experts at Building Brands</div>
+            <FlatIconButton label="see all services" class="see-all-services-button" v-show="!props.showAll" />
+        </div>
         
-        <ServicesList class="services-list" showAll />
+        <ServicesList class="services-list" :showAll="props.showAll" />
     </section>
 </template>
 <style scoped>
@@ -26,8 +29,10 @@ const props = defineProps<IServicesSectionProps>()
         min-height: 100vh;
         padding-inline: 24px;
     }
-    .services-heading {
+    .heading-top {
         margin-top: 100px;
+    }
+    .services-heading {
         font-size: var(--font-size-40);
         font-weight: var(--font-weight-semibold);
         line-height: 110%;
@@ -41,5 +46,25 @@ const props = defineProps<IServicesSectionProps>()
 
     .services-list {
         margin-top: 100px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .heading-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: calc(100% - calc(118px * 2));
+            margin-inline: auto;
+
+            >.services-heading {
+                width: 50%;
+                font-size: 70px;
+            }
+        }
+
+        .services-list {
+            margin-inline: 52px;
+        }
     }
 </style>

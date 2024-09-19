@@ -14,7 +14,7 @@
         class="text-button"
         :style='{ 
             borderRadius: props.radius, 
-            width: props.width,
+            width: props.width ?? "initial",
             height: props.height,
             backgroundColor: props.color
         }'

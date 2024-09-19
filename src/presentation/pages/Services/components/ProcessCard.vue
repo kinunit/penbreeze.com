@@ -1,13 +1,16 @@
 <script setup lang="ts">
-    interface IIProcessCard {
+import type { Component } from 'vue';
+
+    export interface IIProcessCard {
         title:string;
         desc:string;
+        asset:Component;
     }
     const props = defineProps<IIProcessCard>()
 </script>
 <template>
     <div class="process-card">
-        <slot name="process-asset"></slot>
+         <props.asset class="icon" />
 
         <div class="dets">
             <div class="title heading5">{{ props.title }}</div>
@@ -27,6 +30,10 @@
         
         text-align: center;
 
+        >.icon {
+            height: 84px;
+            width: 84px;
+        }
         >.dets {
             margin-top: 50px;
             display: flex;

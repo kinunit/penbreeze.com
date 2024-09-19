@@ -4,15 +4,37 @@ import ContactForm from './components/ContactForm/ContactForm.vue';
 import Footer from 'src/presentation/components/Footer/Footer.vue';
 import ServicesSection from './components/Services/ServicesSection.vue';
 import Testimony from '../About/components/Testimony/Testimony.vue';
+import ProcessCard, { type IIProcessCard } from '../Services/components/ProcessCard.vue';
+import IconBlob from "src/presentation/components/assets/blob.vue";
+import IconFlower from "src/presentation/components/assets/flower.vue";
+import IconSharpFlower from "src/presentation/components/assets/sharp-flower.vue";
+import illIslandWithFlag from "src/assets/illustrations/island-with-flag.svg";
 
+const processList:IIProcessCard[] = [
+    {
+        asset: IconBlob,
+        title:"Get in touch",
+        desc: "Reach out to us via email, social media, text, or our contact form."
+    },
+    {
+        asset: IconFlower,
+        title:"Book a discovery call",
+        desc: "We will talk about your goals and get an idea of what your business needs."
+    },
+    {
+        asset: IconSharpFlower,
+        title:"Get started",
+        desc:"Go over project agreement details and get started."
+    }
+]
 </script>
 <template>
     <section class="hero section-frame">
-        <div class="hero_ill"></div>
-        <div class="hero_text">
-            <div class="hero-heading heading4">Creative Marketing for Iconic Brands</div>
+        <div class="hero-ill"></div>
+        <div class="hero-heading heading4">Creative Marketing for Iconic Brands</div>
+        <div class="action">
             <div class="hero-sub-heading medium-body-text">We blend creativity with strategy to deliver exceptional results</div>
-            <CircleIconButton label="see our work"  />
+            <CircleIconButton label="see our work" class="see-our-work-btn"  />
         </div>
     </section>
 
@@ -20,36 +42,28 @@ import Testimony from '../About/components/Testimony/Testimony.vue';
         <div class="about-heading heading4">Located on the Cape Breton Island</div>
         <div class="about-sub-heading heading5">We specialize in crafting personalized and impactful campaigns designed to connect directly with your audience and effectively promote your products or services.</div>
         <CircleIconButton label="meet the team" class="meet-the-team-button" />
+        <illIslandWithFlag class="island-ill" />
     </section>
 
     <ServicesSection />
 
     <section class="discover section-frame">
-        <div class="discover-heading heading4">
-            Turning your <br /> dreams
-            into reality excites us - it's what we're passionate about!
-        </div>
-        
-        <div class="satisfied-customers"></div>
-        <div class="gooey"></div>
-
-        <div class="discover-prompt get-in-touch">
-            <div class="title heading5">Get in touch</div>
-            <div class="desc medium-body-text">Reach out to us via email, social media, text, or our contact form.</div>
+        <div class="heading">
+            <div class="discover-heading heading4">
+                Turning your dreams into reality excites us - it's what we're passionate about!
+            </div>
+            
+            <div class="satisfied-customers"></div>
         </div>
 
-        <div class="flower"></div>
-
-        <div class="discover-prompt book">
-            <div class="title heading5">Book a discovery call</div>
-            <div class="desc medium-body-text">We will talk about your goals and get an idea of what your business needs.</div>
-        </div>
-
-        <div class="flower"></div>
-
-        <div class="discover-prompt get-started">
-            <div class="title heading5">Get started</div>
-            <div class="desc medium-body-text">Go over project agreement details and get started.</div>
+        <div class="process-list">
+            <ProcessCard 
+                v-for="(process, index) in processList" 
+                :key="index"
+                :title="process.title"
+                :desc="process.desc"
+                :asset="process.asset"
+            />
         </div>
     </section>
 
@@ -63,23 +77,26 @@ import Testimony from '../About/components/Testimony/Testimony.vue';
     .section-frame {
         display: flow-root
     }
+    
     .hero {
         padding-inline: 18px;
         height: 100vh;
-    }
-    .hero_text {
-        margin-top: 393px;
-        display: flex;
-        flex-direction: column;
-        gap: 27px;
-    }
-    .hero-heading {
-        color: var(--primary-teal-color);
-    }
-    .hero-sub-heading {
-        color: var(--black-accent-100);
-        font-weight: var(--font-weight-normal);
-        width: 85%;
+
+        >.hero-heading {
+            margin-top: 393px;
+            color: var(--primary-teal-color);
+        }
+        >.action {
+            margin-top: 27px;
+            display: flex;
+            flex-direction: column;
+            gap: 27px;
+        }
+        >.action .hero-sub-heading {
+            color: var(--black-accent-100);
+            font-weight: var(--font-weight-medium);
+            width: 85%;
+        }
     }
 
     .about-us {
@@ -90,56 +107,64 @@ import Testimony from '../About/components/Testimony/Testimony.vue';
         display: flex;
         flex-direction: column;
         gap: 32px;
-    }
-    .about-heading {
-        margin-top: 72px;
-        width: 80%;
 
-        background: linear-gradient(94deg, #FFF 0.99%, #FFD4CD 93.11%);;
-        background-clip: text;
-        color: transparent;
-    }
-    .about-sub-heading {
-        width: 80%;
-        font-weight: var(--font-weight-normal);
-        line-height: 140%;
-        color: var(--primary-white-color);
-    }
-    .meet-the-team-button {
-        background: none;
-        border: 2px solid var(--primary-white-color);
-        margin-left: 50%;
+        position: relative;
+        overflow: hidden;
+
+        >.about-heading {
+            margin-top: 72px;
+            width: 80%;
+    
+            background: linear-gradient(94deg, #FFF 0.99%, #FFD4CD 93.11%);;
+            background-clip: text;
+            color: transparent;
+            z-index: 1;
+        }
+        >.about-sub-heading {
+            width: 80%;
+            font-weight: var(--font-weight-normal);
+            line-height: 140%;
+            color: var(--primary-white-color);
+            z-index: 1;
+        }
+        >.meet-the-team-button {
+            background: none;
+            border: 2px solid var(--primary-white-color);
+            margin-left: 50%;
+            z-index: 1;
+        }
+        >.island-ill {
+            position: absolute;
+            bottom: -13.8%;
+            left: -13%;
+            z-index: 0;
+            /* width: 100%; */
+            /* height: 300px; */
+        }
     }
 
     .discover {
         min-height: 100vh;
         padding: 50px 18px 100px;
-    }
-    .discover-heading {
-        font-size: var(--font-size-40);
-        font-weight: var(--font-weight-normal);
-    }
-    .satisfied-customers {
-        height: 180px;
-        width: 200px;
-        background-color: #B76FEF;
-        margin: 0 auto;
-        margin-top: 52px;
-    }
-    .gooey {
-        height: 95px;
-        width: 90px;
-        background-color: #1B5EC9;
-        margin: 0 auto;
-        margin-top: 100px;
-    }
-    .flower {
-        height: 85px;
-        width: 85px;
-        background-color: #A483D0;
-        margin: 0 auto;
-        margin-top: 100px;
-        margin-bottom: 50px;
+        
+        >.heading .discover-heading {
+            font-size: var(--font-size-40);
+            font-weight: var(--font-weight-normal);
+            color: var(--primary-teal-color);
+        }
+        >.heading .satisfied-customers {
+            height: 180px;
+            width: 200px;
+            background-color: #B76FEF;
+            margin: 0 auto;
+            margin-top: 52px;
+        }
+
+        >.process-list {
+            display: grid;
+            row-gap: 100px;
+            margin-top: 106px;
+        }
     }
 
     .discover-prompt {
@@ -172,4 +197,77 @@ import Testimony from '../About/components/Testimony/Testimony.vue';
         margin-top: 50px;
         width: 65%;
     }
-</style>
+
+    @media screen and (min-width: 1024px) {
+        .hero {
+            padding-inline: 48px;
+
+            >.hero-heading {
+                width: 70%;
+                margin-top: 188px;
+                font-size: var(--font-size-120);
+                line-height: 130%;
+                letter-spacing: 2.4px;
+            }
+            >.action {
+                flex-direction: row;
+                width: 50%;
+            }
+            >.action .hero-sub-heading {
+                width: 50%;
+            }
+        }
+
+        .about-us {
+            display: flex;
+            gap: 65px;
+            padding-inline: 140px;
+            position: relative;
+            flex-direction: row;
+
+            >.about-heading {
+                width: 50%;
+                margin-top: 72px;
+                font-size: var(--font-size-100);
+                line-height: 130%;
+                letter-spacing: 2px;
+            }
+            >.about-sub-heading {
+                width: 42%;
+                margin-top: 93px;
+                font-size: 56px
+            }
+            >.meet-the-team-button {
+                position: absolute;
+                top: 50%;
+                right: calc(calc(100% - 150px) - 140px);
+            }
+            .island-ill {
+                scale: 1.5;
+                left: 10%;
+            }
+        }
+
+        .discover {
+            min-height: 100vh;
+            padding: 50px 18px 100px;
+
+            >.heading {
+                display: flex;
+                align-items: center;
+                margin-inline: 140px;
+            }
+            >.heading .discover-heading {
+                font-size: 56px;
+                width: 50%;
+                line-height: 140%;
+            }
+
+            >.process-list {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                margin-top: 135px;
+            }
+        }
+    }
+</style>««

@@ -48,5 +48,22 @@
     .copyright {
         font-weight: var(--font-size-14);
         margin-top: 72px;
+        text-align: center;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .footer {
+            height: 550px;
+            padding-inline: 100px;
+        }
+        .company-details {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 30%;
+        }
+        .copyright {
+            margin-top: 147px;
+        }
     }
 </style>
