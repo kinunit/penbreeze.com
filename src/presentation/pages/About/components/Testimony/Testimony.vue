@@ -29,7 +29,7 @@ import IllStar from "src/assets/illustrations/star.svg";
 <style scoped>
     .section-frame {
         display: flow-root;
-        min-height: 665px;
+        min-height: 700px;
         background-color: var(--primary-teal-color);
     }
 
@@ -42,6 +42,7 @@ import IllStar from "src/assets/illustrations/star.svg";
             margin-left: 24px;
             height: 42px;
             width: 42px;
+            fill: #FFF500;
         }
         >.heading-frame .testimony-heading {
             margin-top: 23px;
@@ -72,6 +73,7 @@ import IllStar from "src/assets/illustrations/star.svg";
                 font-size: var(--font-size-14);
                 line-height: 17.65px;
                 color: #051D1E;
+                height: 70%;
             }
             >.person .name {
                 font-weight: var(--font-weight-semibold);
@@ -92,22 +94,21 @@ import IllStar from "src/assets/illustrations/star.svg";
             position: absolute;
             top: 0;
             border-radius: 9px;
+            min-height: 280px;
         }
         >.card-1 {
             z-index: 3;
         }
         >.card-2 {
             width: 90%;
-            height: 200px;
-            top: 60px;
+            top: 10px;
             margin-left: 5%;
             z-index: 2;
             background-color: #239A9E;
         }
         >.card-3 {
             width: 80%;
-            height: 200px;
-            top: 70px;
+            top: 20px;
             left: 10%;
             z-index: 1;
             background-color: #239A9E;

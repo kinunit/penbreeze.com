@@ -15,7 +15,6 @@ import IllSmallStars from "src/assets/illustrations/small-stars.svg";
 <template>
     <section class="intro-section section-frame">
         <div class="heading4 intro-heading">More leads, more sales & more money.</div>
-        <!-- <div class="grow-illus"></div> -->
         <div class="body medium-body-text">We're a team of passionate and creative digital marketing professionals dedicated to helping businesses like yours grow and succeed in the digital world - We help you WIN!</div>
         <img :src=ServicesMainImage class="image-1" />
     </section>
