@@ -1,8 +1,3 @@
-<script lang="ts">
-    export default {
-        name: "ContactForm"
-    }
-</script>
 <script setup lang="ts">
     import PrimaryTextButton from 'src/presentation/components/Buttons/TextButton/PrimaryTextButton.vue';
     import Form from 'src/presentation/components/Form/Form.vue';
@@ -11,6 +6,13 @@
     import { reactive } from 'vue';
     import IllContact from "src/assets/illustrations/contact-ill.svg";
     import IllContactWide from "src/assets/illustrations/contact-ill-2.svg";
+    import IllContactWide3 from "src/assets/illustrations/contact-ill-3.svg";
+
+    interface IContactProps {
+        mini?:boolean;
+    }
+
+    const props = defineProps<IContactProps>()
 
     const firstNameModel = reactive<IInputFieldModel>({
         label: "First name",
@@ -48,7 +50,7 @@
 
 </script>
 <template>
-    <div class="contact-form">
+    <div class="contact-form" :class="props.mini ?'mini-screen' :''">
         <div class="initial-section">
             <div class="contact-form-heading heading4">Tell us your Story</div>
         </div>
@@ -101,7 +103,8 @@
         </Form>
 
         <IllContact class="mobile-ill" />
-        <IllContactWide class="wide-screen-ill" />
+        <IllContactWide class="wide-screen-ill" v-show="props.mini" />
+        <IllContactWide3 class="wide-screen-ill-2" v-show="!props.mini" />
     </div>
 </template>
 <style scoped>
@@ -139,13 +142,11 @@
 
     @media screen and (min-width: 1024px) {
         .contact-form {
-            padding-inline: 80px;
-            height: 100vh;
-            width: 90%;
-            margin: 60px auto;
-            border-radius: 24px;
+            padding: 200px 155px;
             flex-direction: row;
             align-items: flex-start;
+            justify-content: space-between;
+            height: 1218px;
             gap: 58px;
 
             >.mobile-ill {
@@ -154,30 +155,42 @@
             >.wide-screen-ill {
                 display: block;
                 position: absolute;
-                /* width: 100%; */
-                /* left: -10%; */
                 scale: 1;
                 right: 0%;
                 bottom: 0%;
             }
+            >.wide-screen-ill-2 {
+                display: block;
+                position: absolute;
+                width: 100%;
+                right: 0%;
+                bottom: 0%;
+            }
+        }
+        .mini-screen {
+            padding: 100px 80px;
+            margin: 60px auto;
+            width: 90%;
+            border-radius: 24px;
+            height: 841px;
         }
 
         .initial-section {
-
             >.contact-form-heading {
                 font-size: 70px;
+                color: var(--orange-accent-100);
             }
         }
         
         .form {
-            width: 55%;
+            width: 50%;
             margin-top: 0;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             row-gap: 70px;
 
             >.request-service-btn {
-                margin-top: 62px;
+                margin-top: 10px;
                 width: 206% !important;
             }
         }

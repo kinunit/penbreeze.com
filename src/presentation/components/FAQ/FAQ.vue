@@ -2,10 +2,13 @@
 import FAQCard from './FAQCard/FAQCard.vue';
 import { closeFAQOpenState, faqs, openFAQOpenState } from './faqs';
 
-
+interface IFAQProps {
+    bg2?:boolean;
+}
+const props = defineProps<IFAQProps>();
 </script>
 <template>
-    <section class="section-frame">
+    <section class="section-frame" :class="props.bg2 ?'bg2' :''">
         <div class="faq-section">
             <div class="heading6 section-title">FREQUENTLY ASKED QUESTIONS</div>
             <div class="faq-list">
@@ -29,7 +32,7 @@ import { closeFAQOpenState, faqs, openFAQOpenState } from './faqs';
     .faq-section {
         min-height: 1168px;
         padding: 45px 24px 100px;
-        background: white; 
+        background: white;
 
         >.section-title {
             font-size: 24px;
@@ -47,6 +50,9 @@ import { closeFAQOpenState, faqs, openFAQOpenState } from './faqs';
             background: linear-gradient(180deg, #05969B 0%, #5DA988 100%);
             padding: 5%;
             height: 100vh;
+        }
+        .section-frame.bg2 {
+            background: var(--orange-accent-100);
         }
         .faq-section {
             margin: 0;

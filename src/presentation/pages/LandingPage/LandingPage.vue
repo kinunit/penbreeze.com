@@ -48,7 +48,7 @@ import { processes, sectionPageProcessList } from '../Services/services';
         </div>
     </section>
 
-    <ContactForm />
+    <ContactForm mini />
 
     <Testimony />
 
