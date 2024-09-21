@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import FAQ from 'src/presentation/components/FAQ/FAQ.vue';
 import Footer from 'src/presentation/components/Footer/Footer.vue';
-import Posts from './Posts/Posts.vue';
+import Posts from './components/Posts/Posts.vue';
 
 </script>
 <template>

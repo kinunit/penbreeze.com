@@ -2,7 +2,7 @@
 import { reactive } from 'vue';
 import { postService } from './posts';
 import type { PostView } from 'src/application/post/PostView';
-import PostCard from './Post/PostCard.vue';
+import PostCard from './PostCard.vue';
 
 
 // const categories = reactive([

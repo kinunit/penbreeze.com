@@ -25,6 +25,10 @@ const appRoutes:RouteRecordRaw[] = [
     {
         path:"/blog",
         component: Blog
+    },
+    {
+        path:"/*",
+        component: 
     }
 ]
 
