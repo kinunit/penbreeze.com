@@ -4,6 +4,7 @@
 
     interface IFlatIconButtonProps {
         label:string;
+        clickAction:()=> void;
     }
 
     const props = defineProps<IFlatIconButtonProps>()
@@ -15,6 +16,7 @@
         height="50px"
         width="204px"
         class="flat-icon-button"
+        :clickAction="props.clickAction"
     >
         <template v-slot:suffix-icon>
             <div class="icon-arrow-cirle">

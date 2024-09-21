@@ -4,6 +4,7 @@
         radius?:string;
         height:string;
         width:string;
+        clickAction:()=> void;
     }
 
     const props = defineProps<IIconButtonProps>()
@@ -16,6 +17,7 @@
             width: props.width,
             height: props.height
         }'
+        @click="props.clickAction"
     >
         <!-- <div class="icon prefix" v-show="props.prefixIcon">{{ props.prefixIcon  }}</div> -->
         <slot name="prefix-icon"></slot>
