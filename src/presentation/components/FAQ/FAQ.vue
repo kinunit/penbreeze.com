@@ -49,7 +49,7 @@ const props = defineProps<IFAQProps>();
         .section-frame {
             background: linear-gradient(180deg, #05969B 0%, #5DA988 100%);
             padding: 5%;
-            height: 100vh;
+            min-height: 100vh;
         }
         .section-frame.bg2 {
             background: var(--orange-accent-100);
