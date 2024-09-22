@@ -50,6 +50,7 @@ const posts:PostView[] = await postService.getPosts()
     <div class="posts">
         <PostCard
             v-for="post in posts"
+            :id="post.id"
             :title="post.title"
             :path="post.path"
             :excerpt="post.excerpt"
