@@ -4,6 +4,7 @@ import { removeHTML } from 'src/presentation/utils/removeHTML';
 import { useRouter } from 'vue-router';
 
 interface IPostCardProps {
+    id:number;
     title:string;
     // asset:string;
     path:string;
@@ -16,7 +17,6 @@ const props = defineProps<IPostCardProps>();
 const router = useRouter();
 
 function navigate (path:string) {
-    console.log("Her")
     router.push(path);
 }
 </script>
@@ -33,7 +33,7 @@ function navigate (path:string) {
         <FlatIconButton 
             class="read-more-btn"
             label="Read more" 
-            :clickAction="()=> navigate(props.path)"
+            :clickAction="()=> navigate(props.id.toString())"
         />
     </div>
 </template>
