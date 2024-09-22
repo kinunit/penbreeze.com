@@ -2,11 +2,12 @@ import type { PostRepository } from "src/domain/post/post.repository";
 import { RestClient } from "../RestClient";
 import type { Post } from "src/domain/post/Post";
 import { ApiPost } from "./post.api";
+import type { PostStore } from "./post.store";
 
 export class PostResource implements PostRepository {
     constructor(
         private readonly restClient: RestClient,
-        // private readonly store: RecipeStore
+        private readonly store: PostStore
     ) {}
 
     async getPosts(): Promise<Post[]> {
@@ -31,7 +32,23 @@ export class PostResource implements PostRepository {
         return posts;
     }
 
-    getPost(): Promise<Post> {
-        throw new Error("Method not implemented.");
+    async getPost(path:string): Promise<Post> {
+        const apiPost = await this.restClient.get<ApiPost>(`/wp-json/wp/v2/posts/${path}`)
+        .catch((error)=> { 
+            console.log(error)
+        });
+
+        const posts = new ApiPost(
+            apiPost!.data.id,
+            apiPost!.data.title,
+            apiPost!.data.slug,
+            apiPost!.data.content,
+            apiPost!.data.author,
+            apiPost!.data.modified,
+            apiPost!.data.date
+            
+        ).toDomain()
+        
+        return posts;
     }
 }
