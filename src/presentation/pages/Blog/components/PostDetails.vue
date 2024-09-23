@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import formatDate from 'src/presentation/utils/formatDate';
 import { postService } from './posts';
 
 const props = defineProps<{id:string}>()
 
 const postDetails = await postService.getPost(props.id)
-console.log(postDetails)
 </script>
 <script lang="ts">
     export default {
@@ -12,12 +12,53 @@ console.log(postDetails)
     }
 </script>
 <template>
-    <section class="">
-        <div class="title"></div>
+    <section class="section-frame post-section">
+        <div class="title heading3">{{ postDetails.title }}</div>
+        <div class="meta medium-body-text">
+            <div class="author">{{ postDetails.author }}</div>
+            <div class="date">{{ formatDate(postDetails.updatedAt) }}</div>
+            <div class="date"> 3 mins read</div>
+        </div>
+        <div class="content">
+            <img src="" class="image" />
+            <div 
+                class="body large-body-text" 
+                id="post-content" 
+                v-html="postDetails.content"
+            />
+        </div>
     </section>
 </template>
 <style scoped>
+    .section_frame {
+        display: flow-root;
+    }
+    .post-section {
+        padding-inline: 100px;
+    }
     .title  {
+        margin-top: 200px;
+        line-height: 130%;
+        letter-spacing: 1.4px;
+        font-weight: var(--font-weight-semibold);
+    }
 
+    .meta {
+        display: flex;
+        gap: 14px;
+        margin-left: 17px;
+        font-weight: var(--font-weight-normal);
+        color: var(--black-accent-100);
+        line-height: 140%;
+        font-size: 20px;
+    }
+
+    .content {
+        margin: 100px calc(238px - 100px);
+        line-height: 150%;
+        
+        >.body {
+            font-weight: var(--font-weight-normal);
+        }
     }
 </style>
