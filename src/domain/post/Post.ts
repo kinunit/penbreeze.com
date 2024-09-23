@@ -8,6 +8,7 @@ export class Post {
         private readonly title:string,
         private readonly path:string,
         private readonly excerpt:string,
+        private readonly content:string,
         private readonly author:number,
         private readonly createdAt:Date,
         private readonly updatedAt:Date
@@ -19,6 +20,7 @@ export class Post {
             properties.title,
             properties.path,
             properties.excerpt,
+            properties.content,
             properties.author,
             properties.createdAt,
             properties.updatedAt
@@ -31,6 +33,7 @@ export class Post {
             title: this.title,
             path: this.path,
             excerpt: this.excerpt,
+            content: this.content,
             author: this.author,
             createdAt: this.createdAt,
             updatedAt: this.updatedAt

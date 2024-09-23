@@ -1,4 +1,5 @@
 export type PostProperties = {
+    content: string;
     id:number;
     title:string;
     path:string;
