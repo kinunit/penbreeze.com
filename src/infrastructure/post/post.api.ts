@@ -21,6 +21,7 @@ export class ApiPost {
         title: this.title.rendered,
         path: this.slug,
         excerpt: this.content.rendered.split(" ").splice(0, 35).join(" "),
+        content: this.content.rendered,
         author: this.author,
         createdAt: new Date(this.date),
         updatedAt: new Date(this.modified),
