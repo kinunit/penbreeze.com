@@ -5,10 +5,7 @@ import { ApiPost } from "./post.api";
 import type { PostStore } from "./post.store";
 
 export class PostResource implements PostRepository {
-    constructor(
-        private readonly restClient: RestClient,
-        private readonly store: PostStore
-    ) {}
+    constructor(private readonly restClient: RestClient) {}
 
     async getPosts(): Promise<Post[]> {
         const apiPosts = await this.restClient.get<ApiPost[]>('/wp-json/wp/v2/posts')
