@@ -6,9 +6,10 @@ export class PostDetailsView {
         public readonly title:string,
         public readonly path:string,
         public readonly excerpt:string,
+        public readonly content:string,
         public readonly author:number,
-        public readonly createdAt:string,
-        public readonly updatedAt:string
+        public readonly createdAt:Date,
+        public readonly updatedAt:Date
     ) {}
     
     static fromDomain(post:Post) {
@@ -19,9 +20,10 @@ export class PostDetailsView {
             postProperties.title,
             postProperties.path,
             postProperties.excerpt,
+            postProperties.content,
             postProperties.author,
-            postProperties.createdAt.toLocaleDateString(),
-            postProperties.updatedAt.toLocaleDateString()
+            postProperties.createdAt,
+            postProperties.updatedAt
         )
     }
 }
