@@ -15,7 +15,10 @@ const postDetails = await postService.getPost(props.id)
     <section class="section-frame post-section">
         <div class="title heading3">{{ postDetails.title }}</div>
         <div class="meta medium-body-text">
-            <div class="author">{{ postDetails.author }}</div>
+            <!-- <Suspense>
+                <PostAuthor :authorId="postDetails.author"/>
+            </Suspense> -->
+            <!-- <div class="author">{{ postDetails.author }}</div> -->
             <div class="date">{{ formatDate(postDetails.updatedAt) }}</div>
             <div class="date"> 3 mins read</div>
         </div>
@@ -34,7 +37,7 @@ const postDetails = await postService.getPost(props.id)
         display: flow-root;
     }
     .post-section {
-        padding-inline: 100px;
+        padding-inline: 230px;
     }
     .title  {
         margin-top: 200px;
@@ -54,10 +57,11 @@ const postDetails = await postService.getPost(props.id)
     }
 
     .content {
-        margin: 100px calc(238px - 100px);
+        margin: 100px 0;
         line-height: 150%;
         
         >.body {
+            font-size: 30px;
             font-weight: var(--font-weight-normal);
         }
     }
