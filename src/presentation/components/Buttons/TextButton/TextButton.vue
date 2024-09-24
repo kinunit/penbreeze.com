@@ -31,5 +31,7 @@
         font-family: var(--Inter) !important;
         font-weight: var(--font-weight-semibold);
         font-size: var(--font-size-18);
+
+        cursor: pointer;
     }
 </style>

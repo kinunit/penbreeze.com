@@ -4,6 +4,7 @@
 
     interface ICircleIconButtonProps {
         label:string;
+        clickAction:()=>{}
     }
 
     const props = defineProps<ICircleIconButtonProps>()
@@ -16,7 +17,7 @@
         height="150px"
         width="150px"
         class="circle-icon-button"
-        :clickAction="()=> {}"
+        :clickAction="props.clickAction"
     >
         <template v-slot:prefix-icon>
             <IconArrowDiagonal class="icon-arrow" />
@@ -34,6 +35,7 @@
         background-color: var(--primary-teal-color);
         color: var(--primary-white-color);
         font-size: 18px;
+        padding: 10px;
     }
 
     .icon-arrow {

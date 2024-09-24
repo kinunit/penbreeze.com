@@ -29,6 +29,7 @@
     .icon-button {
         display: flex;
         font-family: var(--Inter) !important;
+        cursor: pointer;
     }
     .icon {
         height: 26px;
