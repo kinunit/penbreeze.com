@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CircleIconButton from 'src/presentation/components/Buttons/IconButtons/CircleIconButton.vue';
-import ServicesSection from '../LandingPage/components/Services/ServicesSection.vue';
+import ServicesSection from './components/Services/ServicesSection.vue';
 import ProcessCard from './components/ProcessCard.vue';
 import { processes } from './services';
 import Footer from 'src/presentation/components/Footer/Footer.vue';
@@ -12,7 +12,9 @@ import IllStar from "src/assets/illustrations/star.svg";
 import IllSmallStars from "src/assets/illustrations/small-stars.svg";
 import Header from "src/presentation/components/Header/Header.vue";
 import IconBlob from "src/assets/illustrations/blob2.svg";
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 </script>
 <template>
     <Header
@@ -53,7 +55,11 @@ import IconBlob from "src/assets/illustrations/blob2.svg";
         
         <div class="see-our-work">
             <div class="body heading4">At PenBreeze Marketing, we offer a wide range of digital marketing solutions that can be customized to suit the unique needs of your brand.</div>
-            <CircleIconButton label="Let's collaborate" class="see-our-work-btn" />
+            <CircleIconButton 
+                label="Let's collaborate" 
+                class="see-our-work-btn"
+                :clickAction="()=> router.push({ path: '/contact-us' })" 
+            />
         </div>
     </section>
 
