@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import FAQ from 'src/presentation/components/FAQ/FAQ.vue';
-import ContactForm from '../LandingPage/components/ContactForm/ContactForm.vue';
 import Header from "src/presentation/components/Header/Header.vue";
+import ContactForm from './components/ContactForm.vue';
 </script>
 <template>
     <Header

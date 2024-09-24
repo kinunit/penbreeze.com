@@ -9,7 +9,7 @@ interface IPostCardProps {
     // asset:string;
     path:string;
     author:number;
-    date:string;
+    date:Date;
     excerpt:string;
 }
 const props = defineProps<IPostCardProps>();

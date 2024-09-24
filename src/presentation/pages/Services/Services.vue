@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import CircleIconButton from 'src/presentation/components/Buttons/IconButtons/CircleIconButton.vue';
-import ServicesSection from './components/Services/ServicesSection.vue';
 import ProcessCard from './components/ProcessCard.vue';
-import { processes } from './services';
-import Footer from 'src/presentation/components/Footer/Footer.vue';
 import FAQ from 'src/presentation/components/FAQ/FAQ.vue';
 import ServicesMainImage from "src/assets/images/services-main.png";
 import IllStaircase from "src/assets/illustrations/staircase.svg";
@@ -13,6 +10,8 @@ import IllSmallStars from "src/assets/illustrations/small-stars.svg";
 import Header from "src/presentation/components/Header/Header.vue";
 import IconBlob from "src/assets/illustrations/blob2.svg";
 import { useRouter } from 'vue-router';
+import ServicesSection from './components/ServicesSection.vue';
+import { processes } from './services';
 
 const router = useRouter();
 </script>
