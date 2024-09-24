@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import CircleIconButton from 'src/presentation/components/Buttons/IconButtons/CircleIconButton.vue';
-import ContactForm from './components/ContactForm/ContactForm.vue';
-import ServicesSection from './components/Services/ServicesSection.vue';
-import Testimony from '../About/components/Testimony/Testimony.vue';
-import ProcessCard from '../Services/components/ProcessCard.vue';
+import ContactForm from 'src/presentation/pages/ContactUs/components/ContactForm.vue';
+import ServicesSection from "src/presentation/pages/Services/components/ServicesSection.vue";
+import Testimony from 'src/presentation/pages/About/components/Testimony/Testimony.vue';
+import ProcessCard from 'src/presentation/pages/Services/components/ProcessCard.vue';
 import illIslandWithFlag from "src/assets/illustrations/island-with-flag.svg";
-import { sectionPageProcessList } from '../Services/services';
+import { sectionPageProcessList } from 'src/presentation/pages/Services/services';
 import Header from "src/presentation/components/Header/Header.vue";
 import IconBlob from "src/assets/illustrations/blob2.svg";
 import { useRouter } from 'vue-router';
