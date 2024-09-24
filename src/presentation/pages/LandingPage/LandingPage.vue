@@ -8,7 +8,9 @@ import illIslandWithFlag from "src/assets/illustrations/island-with-flag.svg";
 import { sectionPageProcessList } from '../Services/services';
 import Header from "src/presentation/components/Header/Header.vue";
 import IconBlob from "src/assets/illustrations/blob2.svg";
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 </script>
 <template>
     <Header
@@ -17,19 +19,28 @@ import IconBlob from "src/assets/illustrations/blob2.svg";
         callToActionColor="var(--primary-white-color)"
     />
     <IconBlob class="global-blob" />
+
     <section class="hero section-frame">
         <div class="hero-ill"></div>
         <div class="hero-heading heading4">Creative Marketing for Iconic Brands</div>
         <div class="action">
             <div class="hero-sub-heading medium-body-text">We blend creativity with strategy to deliver exceptional results</div>
-            <CircleIconButton label="see our work" class="see-our-work-btn"  />
+            <CircleIconButton 
+                label="see what we do" 
+                class="see-our-work-btn" 
+                :clickAction="()=> router.push({ path: '/services' })" 
+            />
         </div>
     </section>
 
     <section class="about-us section-frame">
         <div class="about-heading heading4">Located on the Cape Breton Island</div>
         <div class="about-sub-heading heading5">We specialize in crafting personalized and impactful campaigns designed to connect directly with your audience and effectively promote your products or services.</div>
-        <CircleIconButton label="meet the team" class="meet-the-team-button" />
+        <CircleIconButton 
+            label="meet the team" 
+            class="meet-the-team-button" 
+            :clickAction="()=> router.push({ path: '/about' })"
+        />
         <illIslandWithFlag class="island-ill" />
     </section>
 
