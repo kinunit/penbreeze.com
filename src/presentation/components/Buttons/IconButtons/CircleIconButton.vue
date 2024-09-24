@@ -16,6 +16,7 @@
         height="150px"
         width="150px"
         class="circle-icon-button"
+        :clickAction="()=> {}"
     >
         <template v-slot:prefix-icon>
             <IconArrowDiagonal class="icon-arrow" />

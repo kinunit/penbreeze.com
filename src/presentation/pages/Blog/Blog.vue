@@ -2,9 +2,16 @@
 import FAQ from 'src/presentation/components/FAQ/FAQ.vue';
 import Footer from 'src/presentation/components/Footer/Footer.vue';
 import Posts from './components/PostsList.vue';
-
+import Header from 'src/presentation/components/Header/Header.vue';
+import IconBlob from "src/assets/illustrations/blob2.svg";
 </script>
 <template>
+    <Header
+        navItemColor="#303739"
+        logoColor="var(--primary-teal-color)"
+        callToActionColor="var(--primary-white-color)"
+    />
+    <IconBlob class="global-blob" />
     <section class="section-frame">
         <div class="heading4 entry-heading">Blog posts</div>
         <div class="posts-frame">
@@ -14,11 +21,16 @@ import Posts from './components/PostsList.vue';
         </div>
     </section>
     <FAQ bg2 />
-    <Footer />
 </template>
 <style scoped>
     .section-frame {
         display: flow-root;
+    }
+    .global-blob {
+        position: absolute;
+        right: -30px;
+        top: -130px;
+        fill: var(--primary-teal-color);
     }
     .entry-heading {
         width: max-content;

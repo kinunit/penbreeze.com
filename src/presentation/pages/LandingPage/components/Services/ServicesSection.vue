@@ -18,7 +18,12 @@ const props = defineProps<IServicesSectionProps>()
     <section class="section">
         <div class="heading-top">
             <div class="services-heading heading5">We are experts at Building Brands</div>
-            <FlatIconButton label="see all services" class="see-all-services-button" v-show="!props.showAll" />
+            <FlatIconButton 
+                label="see all services" 
+                class="see-all-services-button" 
+                v-show="!props.showAll"
+                :clickAction="()=> {}"
+            />
         </div>
         
         <ServicesList class="services-list" :showAll="props.showAll" />

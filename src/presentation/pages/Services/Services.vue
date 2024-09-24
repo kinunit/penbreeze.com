@@ -10,9 +10,17 @@ import IllStaircase from "src/assets/illustrations/staircase.svg";
 import IllTrophy from "src/assets/illustrations/trophy.svg";
 import IllStar from "src/assets/illustrations/star.svg";
 import IllSmallStars from "src/assets/illustrations/small-stars.svg";
+import Header from "src/presentation/components/Header/Header.vue";
+import IconBlob from "src/assets/illustrations/blob2.svg";
 
-</script>   
+</script>
 <template>
+    <Header
+        navItemColor="var(--primary-white-color)"
+        logoColor="var(--primary-white-color)"
+        callToActionColor="var(--primary-teal-color)"
+    />
+    <IconBlob class="global-blob" />
     <section class="intro-section section-frame">
         <div class="heading4 intro-heading">More leads, more sales & more money.</div>
         <div class="body medium-body-text">We're a team of passionate and creative digital marketing professionals dedicated to helping businesses like yours grow and succeed in the digital world - We help you WIN!</div>
@@ -60,12 +68,16 @@ import IllSmallStars from "src/assets/illustrations/small-stars.svg";
     </section>
 
     <FAQ />
-
-    <Footer />
 </template>
 <style scoped>
     .section-frame {
         display: flow-root;
+    }
+    .global-blob {
+        position: absolute;
+        right: -30px;
+        top: -130px;
+        fill: var(--primary-white-color);
     }
 
     .intro-section {

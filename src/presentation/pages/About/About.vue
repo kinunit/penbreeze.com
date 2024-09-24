@@ -2,9 +2,16 @@
     import AboutUsMainImage from "src/presentation/components/about-us-main.vue";
     import IllPattern from "src/assets/illustrations/data-research.svg";
     import Testimony from "./components/Testimony/Testimony.vue";
-    import Footer from "src/presentation/components/Footer/Footer.vue";
+    import Header from "src/presentation/components/Header/Header.vue";
+    import IconBlob from "src/assets/illustrations/blob2.svg";
 </script>
 <template>
+    <Header
+        navItemColor="#303739"
+        logoColor="var(--primary-teal-color)"
+        callToActionColor="var(--primary-white-color)"
+    />
+    <IconBlob class="global-blob" />
     <section class="entry section-frame">
         <div class="heading4 about-heading">
             <div>CREATIVITY</div>
@@ -54,15 +61,18 @@
     </section>
 
     <Testimony />
-
-    <Footer />
 </template>
 <style scoped>
     .section-frame {
         display: flow-root;
         overflow: hidden
     }
-    
+    .global-blob {
+        position: absolute;
+        right: -30px;
+        top: -130px;
+        fill: var(--primary-teal-color);
+    }
     .entry {
         min-height: 100vh;
 
