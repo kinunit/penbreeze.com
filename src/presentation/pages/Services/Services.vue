@@ -80,8 +80,8 @@ const router = useRouter();
     }
     .global-blob {
         position: absolute;
-        right: -30px;
-        top: -130px;
+        right: -150px;
+        top: -140px;
         fill: var(--primary-white-color);
     }
 
@@ -188,6 +188,13 @@ const router = useRouter();
             font-weight: var(--font-weight-500);
             text-align: center;
             margin-inline: auto;
+        }
+    }
+
+    @media screen and (min-width: 800px) {
+        .global-blob {
+            right: -30px;
+            top: -130px;
         }
     }
 

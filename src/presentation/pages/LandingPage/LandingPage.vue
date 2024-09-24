@@ -9,6 +9,8 @@ import { sectionPageProcessList } from 'src/presentation/pages/Services/services
 import Header from "src/presentation/components/Header/Header.vue";
 import IconBlob from "src/assets/illustrations/blob2.svg";
 import { useRouter } from 'vue-router';
+import IllMegaphone from "src/assets/illustrations/megaphone-marketing.svg";
+import IllsatisfiedCustomers from "src/assets/illustrations/satisfied-customers.svg"
 
 const router = useRouter();
 </script>
@@ -31,6 +33,7 @@ const router = useRouter();
                 :clickAction="()=> router.push({ path: '/services' })" 
             />
         </div>
+        <IllMegaphone class="megaphone" />
     </section>
 
     <section class="about-us section-frame">
@@ -52,7 +55,7 @@ const router = useRouter();
                 Turning your dreams into reality excites us - it's what we're passionate about!
             </div>
             
-            <div class="satisfied-customers"></div>
+            <IllsatisfiedCustomers class="satisfied-customers" />
         </div>
 
         <div class="process-list">
@@ -76,14 +79,17 @@ const router = useRouter();
     }
     .global-blob {
         position: absolute;
-        right: -30px;
-        top: -130px;
+        right: -150px;
+        top: -140px;
         fill: var(--primary-teal-color);
+        z-index: 10;
     }
     .hero {
         background-color: #F1F6F7;
         padding-inline: 18px;
         height: 100vh;
+        position: relative;
+        z-index: 9;
 
         >.hero-heading {
             margin-top: 393px;
@@ -99,6 +105,12 @@ const router = useRouter();
             color: var(--black-accent-100);
             font-weight: var(--font-weight-medium);
             width: 85%;
+        }
+        >.megaphone {
+            scale: 0.5;
+            position: absolute;
+            top: 20px;
+            right: 0%;
         }
     }
 
@@ -141,8 +153,6 @@ const router = useRouter();
             bottom: -13.8%;
             left: -13%;
             z-index: 0;
-            /* width: 100%; */
-            /* height: 300px; */
         }
     }
 
@@ -156,9 +166,6 @@ const router = useRouter();
             color: var(--primary-teal-color);
         }
         >.heading .satisfied-customers {
-            height: 180px;
-            width: 200px;
-            background-color: #B76FEF;
             margin: 0 auto;
             margin-top: 52px;
         }
@@ -201,6 +208,13 @@ const router = useRouter();
         width: 65%;
     }
 
+    @media screen and (min-width: 800px) {
+        .global-blob {
+            right: -30px;
+            top: -130px;
+        }
+    }
+
     @media screen and (min-width: 1024px) {
         .hero {
             padding-inline: 48px;
@@ -218,6 +232,13 @@ const router = useRouter();
             }
             >.action .hero-sub-heading {
                 width: 50%;
+            }
+            >.megaphone {
+                scale: 1.2;
+                position: absolute;
+                top: unset;
+                bottom: 15%;
+                right: 4%;
             }
         }
 
@@ -252,7 +273,7 @@ const router = useRouter();
         }
 
         .discover {
-            min-height: 100vh;
+            min-height: unset;
             padding: 50px 18px 100px;
 
             >.heading {

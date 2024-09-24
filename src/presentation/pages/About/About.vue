@@ -69,8 +69,8 @@
     }
     .global-blob {
         position: absolute;
-        right: -30px;
-        top: -130px;
+        right: -150px;
+        top: -140px;
         fill: var(--primary-teal-color);
     }
     .entry {
@@ -159,6 +159,10 @@
     }
 
     @media screen and (min-width: 800px) {
+        .global-blob {
+            right: -30px;
+            top: -130px;
+        }
         .entry {
             height: 1828px;
 

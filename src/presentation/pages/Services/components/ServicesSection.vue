@@ -32,7 +32,8 @@ const router = useRouter();
 </template>
 <style scoped>
     .section {
-        min-height: 100vh;
+        /* min-height: 100vh; */
+        padding-bottom: 100px;
         padding-inline: 24px;
     }
     .heading-top {

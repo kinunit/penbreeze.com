@@ -29,6 +29,7 @@ const mobileSideBarVisibility = reactive({ state: false });
 
         <IconMenu 
             class="menu"
+            :style="{ stroke: props.callToActionColor }"
             @click="()=> mobileSideBarVisibility.state = true"
         />
     </div>

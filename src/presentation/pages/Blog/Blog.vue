@@ -28,8 +28,8 @@ import IconBlob from "src/assets/illustrations/blob2.svg";
     }
     .global-blob {
         position: absolute;
-        right: -30px;
-        top: -130px;
+        right: -150px;
+        top: -140px;
         fill: var(--primary-teal-color);
     }
     .entry-heading {
@@ -40,5 +40,12 @@ import IconBlob from "src/assets/illustrations/blob2.svg";
     }
     .posts-frame {
         margin-top: 80px !important;
+    }
+
+    @media screen and (min-width: 800px) {
+        .global-blob {
+            right: -30px;
+            top: -130px;
+        }
     }
 </style>
