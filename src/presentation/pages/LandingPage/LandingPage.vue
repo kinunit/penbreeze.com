@@ -37,8 +37,10 @@ const router = useRouter();
     </section>
 
     <section class="about-us section-frame">
-        <div class="about-heading heading4">Located on the Cape Breton Island</div>
-        <div class="about-sub-heading heading5">We specialize in crafting personalized and impactful campaigns designed to connect directly with your audience and effectively promote your products or services.</div>
+        <div class="about-heading heading4">Find fresh marketing strategy for phenomenal results</div>
+        <div class="about-sub-heading heading5">
+            <div class="text-head">Creativity + Strategy equals <br /> Phenomenal Results.</div>
+            We will help you take control of your business and achieve the results that you want in creative and effective ways.</div>
         <CircleIconButton 
             label="meet the team" 
             class="meet-the-team-button" 
@@ -87,12 +89,12 @@ const router = useRouter();
     .hero {
         background-color: #F1F6F7;
         padding-inline: 18px;
-        height: 100vh;
+        min-height: 100vh;
         position: relative;
         z-index: 9;
 
         >.hero-heading {
-            margin-top: 393px;
+            margin-top: 370px;
             color: var(--primary-teal-color);
         }
         >.action {
@@ -223,7 +225,7 @@ const router = useRouter();
                 width: 70%;
                 margin-top: 188px;
                 font-size: var(--font-size-120);
-                line-height: 130%;
+                line-height: 100%;
                 letter-spacing: 2.4px;
             }
             >.action {
@@ -244,26 +246,33 @@ const router = useRouter();
 
         .about-us {
             display: flex;
-            gap: 65px;
-            padding-inline: 140px;
+            gap: 5px;
+            padding-inline: 70px;
             position: relative;
             flex-direction: row;
 
             >.about-heading {
-                width: 50%;
+                width: 62%;
                 margin-top: 72px;
-                font-size: var(--font-size-100);
-                line-height: 130%;
+                font-size: 6.2em;
+                line-height: 100%;
                 letter-spacing: 2px;
             }
             >.about-sub-heading {
-                width: 42%;
+                width: 38%;
                 margin-top: 93px;
-                font-size: 56px
+                font-size: 3em
+            }
+            >.about-sub-heading .text-head {
+                font-size: 1.5rem;
+                font-weight: var(--font-weight-semibold);
+                line-height: 100%;
+                margin-bottom: 20px;
             }
             >.meet-the-team-button {
                 position: absolute;
-                top: 50%;
+                top: 60%;
+                line-height: 100%;
                 right: calc(calc(100% - 150px) - 140px);
             }
             .island-ill {
@@ -291,6 +300,14 @@ const router = useRouter();
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 margin-top: 135px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1600px) {
+        .hero {
+            >.hero-heading {
+                line-height: 130%;
             }
         }
     }

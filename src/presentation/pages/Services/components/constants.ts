@@ -11,50 +11,50 @@ import type { IService } from "./ServiceCard.vue";
 export const allServices:IService[] = [
     {
         asset: IllBranding,
-        title: "Branding & Content coverage",
-        description: "We specialize in crafting personalized and impactful campaigns designed to connect directly with your audience and effectively promote your products or services."
+        title: "Branding",
+        description: "Your brand identity is more than fancy colours and fonts. It is how people FEEL about your brand - and I can help with that - by creating graphics that truly represent your brand."
     },
     {
         asset: IWebDevelopment,
         title: "Website Design",
-        description: "We specialize in crafting personalized and impactful campaigns designed to connect directly with your audience and effectively promote your products or services."
+        description: "A well-designed and user-friendly website is crucial for any business in today's digital world. Our team can help you design a professional and visually appealing website that effectively represents your brand and converts visitors into customers."
     },
     {
         asset: IllSeo,
-        title: "Search engine Optimization",
-        description: "We specialize in crafting personalized and impactful campaigns designed to connect directly with your audience and effectively promote your products or services."
+        title: "Search engine Optimization (SEO)",
+        description: "We will work with you to create SEO-friendly content that follows the Webmaster Guidelines to help you achieve your business goals and avoid penalization by Search Engines."
     },
     {
         asset: IShoppingSaleMail,
-        title: "Branding & Content coverage",
-        description: "We specialize in crafting personalized and impactful campaigns designed to connect directly with your audience and effectively promote your products or services."
+        title: "Email Marketing",
+        description: "With our email marketing services, we'll help you create and send personalized and targeted emails to your subscribers, driving more conversions and building customer loyalty."
     },
     {
         asset: IllMegaPhone,
-        title: "Website Design",
-        description: "We specialize in crafting personalized and impactful campaigns designed to connect directly with your audience and effectively promote your products or services."
+        title: "Social Media Marketing",
+        description: "Our social media marketing experts can help you create and implement effective social media campaigns across various platforms such as Facebook, Instagram, Twitter, and LinkedIn. This will help you reach a wider audience, engage with potential customers, and build brand awareness."
     },
     {
         asset: IllSupport,
-        title: "Search engine Optimization",
-        description: "We specialize in crafting personalized and impactful campaigns designed to connect directly with your audience and effectively promote your products or services."
+        title: "Site Maintenance & Support",
+        description: "From updating website content to fixing technical issues, our team can handle all your website maintenance and support needs, allowing you to focus on running your business."
     }
 ]
 
 export const minServices:IService[] = [
     {
         asset: IllNavTree,
-        title: "Branding & Content coverage",
-        description: "We specialize in crafting personalized and impactful campaigns designed to connect directly with your audience and effectively promote your products or services."
+        title: "Graphic Design & Branding",
+        description: "Your brand identity is more than fancy colours and fonts. It is how people FEEL about your brand - and I can help with that - by creating graphics that truly represent your brand."
     },
     {
         asset: IWebDevelopment,
         title: "Website Design",
-        description: "We specialize in crafting personalized and impactful campaigns designed to connect directly with your audience and effectively promote your products or services."
+        description: "The first impression that your site produces in the minds of its users is a BIG deal. If your site looks buggy, no one will stay on it. That's why our focus is on designing you a stunning site"
     },
     {
         asset: IShoppingSaleMail,
-        title: "Search engine Optimization",
-        description: "We specialize in crafting personalized and impactful campaigns designed to connect directly with your audience and effectively promote your products or services."
+        title: "Search engine Optimization (SEO)",
+        description: "We will work with you to create SEO-friendly content that follows the Webmaster Guidelines to help you achieve your business goals and avoid penalization by Search Engines."
     },
 ]
