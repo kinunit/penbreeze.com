@@ -25,7 +25,7 @@ const mobileSideBarVisibility = reactive({ state: false });
             to="contact-us" 
             class="call-to-action" 
             :style="{ color: props.callToActionColor }"
-        >Let's talk</router-link>
+        >Get started</router-link>
 
         <IconMenu 
             class="menu"
