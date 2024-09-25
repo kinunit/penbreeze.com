@@ -52,7 +52,10 @@
 <template>
     <div class="contact-form" :class="props.mini ?'mini-screen' :''">
         <div class="initial-section">
-            <div class="contact-form-heading heading4">Tell us your Story</div>
+            <div class="get-in-touch">Get in touch!</div>
+            <div class="contact-form-heading heading4">
+                We Are Pumped to Get to Know You!
+            </div>
         </div>
 
         <Form class="form">
@@ -96,7 +99,7 @@
 
                 <PrimaryTextButton
                     width=""
-                    label="Request Service" 
+                    label="Next step" 
                     class="request-service-btn"
                 />
             </template>
@@ -170,9 +173,17 @@
         }
 
         .initial-section {
+            width: 40%;
+            
+            >.get-in-touch {
+                font-weight: var(--font-weight-semibold);
+                font-size: 1.5rem;
+                color: var(--primary-white-color);
+            }
             >.contact-form-heading {
                 font-size: 70px;
                 color: var(--orange-accent-100);
+                margin-top: 10px;
             }
         }
         
