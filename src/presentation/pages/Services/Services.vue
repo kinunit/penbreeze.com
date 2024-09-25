@@ -213,14 +213,14 @@ const router = useRouter();
                 letter-spacing: 2.4px;
             }
             >.body {
-                width: 50%;
-                font-size: 30px;
-                margin-top: 25%;
+                width: 55%;
+                font-size: 1.8em;
+                margin-top: 6em;
             }
             >.image-1 {
                 position: absolute;
                 height: auto;
-                width: 40%;
+                width: 35%;
                 margin-top: 54px;
                 right: 100px;
                 bottom: 5px

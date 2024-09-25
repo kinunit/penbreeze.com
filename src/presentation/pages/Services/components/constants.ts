@@ -54,7 +54,12 @@ export const minServices:IService[] = [
     },
     {
         asset: IShoppingSaleMail,
-        title: "Search engine Optimization (SEO)",
-        description: "We will work with you to create SEO-friendly content that follows the Webmaster Guidelines to help you achieve your business goals and avoid penalization by Search Engines."
+        title: "Email Marketing",
+        description: "With our email marketing services, we'll help you create and send personalized and targeted emails to your subscribers, driving more conversions and building customer loyalty."
     },
+    // {
+    //     asset: IShoppingSaleMail,
+    //     title: "Search engine Optimization (SEO)",
+    //     description: "We will work with you to create SEO-friendly content that follows the Webmaster Guidelines to help you achieve your business goals and avoid penalization by Search Engines."
+    // },
 ]
