@@ -20,7 +20,6 @@ import IconBlob from "src/assets/illustrations/blob2.svg";
             </Suspense>
         </div>
     </section>
-    <FAQ bg2 />
 </template>
 <style scoped>
     .section-frame {
