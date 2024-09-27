@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
 import { postService } from './posts';
 import type { PostView } from 'src/application/post/PostView';
 import PostCard from './PostCard.vue';
@@ -83,5 +82,7 @@ const posts:PostView[] = await postService.getPosts()
         margin-top: 50px;
         padding: 55px 15px;
         background: var(--primary-teal-color);
+        display: grid;
+        grid-template-columns: repeat(3 ,1fr);
     }
 </style>
