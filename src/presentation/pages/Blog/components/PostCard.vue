@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import FlatIconButton from 'src/presentation/components/Buttons/IconButtons/FlatIconButton.vue';
+import formatDate from 'src/presentation/utils/formatDate';
 import { removeHTML } from 'src/presentation/utils/removeHTML';
 import { useRouter } from 'vue-router';
 
@@ -25,8 +26,8 @@ function navigate (path:string) {
         <div class="title medium-body-text">{{ props.title }}</div>
         <img src="" class="image" />
         <div class="meta">
-            <div class="author">{{ props.author }}</div>
-            <div class="date">{{ props.date }}</div>
+            <!-- <div class="author">{{ props.author }}</div> -->
+            <div class="date">{{ formatDate(props.date) }}</div>
         </div>
         <div class="excerpt">{{ removeHTML(props.excerpt) }}</div>
 
