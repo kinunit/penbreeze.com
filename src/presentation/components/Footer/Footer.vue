@@ -5,16 +5,18 @@
         <div class="company-details">
             <div class="detail-section contact">
                 <div class="title">Contact</div>
-                <div class="item heading6">contact@penbreeze.com</div>
+                <div class="item heading6">hello@penbreeze.com</div>
                 <div class="item heading6">+1 (902) 418-5239</div>
             </div>
             <div class="detail-section social">
                 <div class="title">Socials</div>
                 <div class="item heading6">instagram</div>
+                <div class="item heading6">youtube</div>
             </div>
             <div class="detail-section">
-                <div class="title">Canada</div>
-                <div class="address heading6">Lorem ipsum No. 375 Cape Breton Island</div>
+                <router-link to="/blog" class="address heading6">Blog</router-link>
+                <router-link to="/about" class="address heading6">About</router-link>
+                <router-link to="/privacy-policy" class="address heading6">Privacy policy</router-link>
             </div>
         </div>
         <div class="copyright">
